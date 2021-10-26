@@ -1,0 +1,176 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+header .container{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin: 0;
+    background: #C57B57;
+    color: white;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 1px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+header .container a{
+    text-decoration: none;
+    color: #1E2D2F;
+    padding: 4%;
+}
+
+#main-page .container{
+    text-align: center;
+}
+
+#main-page .container h1{
+    font-size: 70px;
+}
+
+#main-page .container h2{
+    font-size: 20px;
+}
+
+#main-page .container img{
+    border-radius: 50%;
+    width: 300px;
+    height: auto;
+}
+
+#aboutme .container{
+    margin-top: none;
+    padding-left: 25px;
+    padding-bottom: 3px;
+    font-size: 15px;
+}
+
+#skills .container{
+    padding-top: 2px;
+    padding-bottom: 35px;
+    padding-right: 25px;
+    background-color: #1E2D2F;
+    margin-bottom: none;
+    text-align: center;
+    color: white;
+}
+
+#skills .container h1{
+    font-size: 50px;
+}
+
+.bar{
+    background: white;
+    display: block;
+    height: 6px;
+    width: 700px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.bar span{
+    height: 5px;
+    float: left;
+    background: #c57b57;
+}
+
+.html{
+    width: 60%;
+}
+
+.cprog{
+    width: 90%;
+}
+
+.java{
+    width: 50%;
+}
+
+.python{
+    width: 80%;
+}
+
+#education .container{
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    background-color: #f7dba7;
+    margin-top: none;
+    height: auto;
+}
+
+#education .container h1{
+    font-size: 50px;
+}
+
+#education .container img{
+    border-radius: 50%;
+    width: auto;
+    height: 250px;
+    padding-right: 10px;
+    top: 50%;
+    left: 50%;
+}
+
+#education .container ul li{
+    padding-bottom: 15px;
+}
+
+#projects .container{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 15px;
+    margin-top: none;
+    text-align: right;
+    height: auto;
+}
+
+#projects .container h1{
+    font-size: 50px;
+}
+
+#projects .container img{
+    border-radius: 50%;
+    width: auto;
+    height: 250px;
+    padding-left: 10px;
+}
+
+#contact .container{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: black;
+    margin-top: none;
+    color: white;
+    text-align: center;
+}
+
+#contact .container ul li{
+    display: inline;
+    padding-right: 15px;
+}
+
+#phone{
+    width: 25px;
+    height: auto;
+}
+
+#fb{
+    width: 30px;
+    height: auto;
+}
+
+#email{
+    width: 35px;
+    height: auto;
+}

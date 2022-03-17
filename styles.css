@@ -14,6 +14,10 @@ header .container{
     margin: 0;
     background: #C57B57;
     color: white;
+    transition: 0.5s;
+}
+
+header .container ul{
     padding-top: 1px;
     padding-left: 10px;
     padding-bottom: 1px;
@@ -22,10 +26,45 @@ header .container{
     text-align: center;
 }
 
-header .container a{
+header .container ul a{
     text-decoration: none;
     color: #1E2D2F;
     padding: 4%;
+}
+
+header .container i{
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 712px){
+    header i{
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+    header .container{
+        position: fixed;
+        background: #C57B57;
+        height: 100%;
+        width: 200px;
+        top: 0;
+        right: -300px;
+        text-align: center;
+        z-index: 2;
+        transition: 1s;
+    }
+    header .container i{
+        padding-top: 15px;
+        visibility: visible;
+    }
+    header .fa{
+        display: block;
+        color: black;
+        font: 22px;
+        cursor: pointer;
+    }
+    header .container ul{
+        padding: 30px;
+    }
 }
 
 #main-page .container{
@@ -114,12 +153,25 @@ header .container a{
 }
 
 #education .container img{
+    float: right;
     border-radius: 50%;
     width: auto;
     height: 250px;
     padding-right: 10px;
     top: 50%;
     left: 50%;
+}
+
+@media (max-width: 712px){
+    #education .container img{
+        float: none;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #education .container{
+        text-align: center;
+    }
 }
 
 #education .container ul li{
@@ -140,10 +192,23 @@ header .container a{
 }
 
 #projects .container img{
+    float: left;
     border-radius: 50%;
     width: auto;
     height: 250px;
     padding-left: 10px;
+}
+
+@media (max-width: 712px){
+    #projects .container img{
+        float: none;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #projects .container{
+        text-align: center;
+    }
 }
 
 #contact .container{
@@ -163,6 +228,8 @@ header .container a{
 #phone{
     width: 25px;
     height: auto;
+    padding: 0;
+    text-align: center;
 }
 
 #fb{

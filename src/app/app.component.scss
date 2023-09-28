@@ -1,0 +1,120 @@
+.about-text *{
+    margin: 0;
+}
+
+.sections-container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.home-img{
+    background-image: url('../assets/splash.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+section {
+    scroll-snap-align: center;
+}
+
+.nav-links{
+    scroll-behavior: smooth;
+}
+
+.typewriter{
+    width: min-content;
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    opacity: 0; /* Initially hidden */
+    animation: 
+      typing 2.5s steps(40, end) 1s forwards,
+      blink-caret .75s step-end 1s infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.skill-chip{
+    border: 3px solid orange;
+    color: white;
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 0.3rem;
+    width:fit-content;
+    .skill-image-holder{
+        border: 1px solid white;
+        border-radius: 50%;
+        background-color: white;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .skill-image{
+            aspect-ratio: 1/1;
+            width: 2rem;
+            filter: grayscale(100%);
+        }
+    }
+    span {
+        margin-left: 0.5rem;
+        margin-right: 0.1rem;
+    }
+}
+
+.project-card{
+    border: 2.5px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    .project-img-holder{
+        border: 1.5px solid black;
+        border-radius: 10px;
+        width: 95%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgb(255, 165, 0, 0.3);
+        .project-img{
+            aspect-ratio: default;
+            width: 80%;
+        }
+    }
+}
+
+.contact-icon{
+    aspect-ratio: default;
+    width: 2rem;
+    filter: invert(100%);
+}

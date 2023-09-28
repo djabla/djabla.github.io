@@ -1,18 +1,41 @@
-<nav
-class="w-screen h-5rem flex flex-row bg-black-alpha-10 fixed top-0 gap-2 justify-content-center align-items-center px-5">
+<nav class="nav-show w-screen bg-black-alpha-20 h-5rem flex flex-row fixed top-0 gap-2 justify-content-center align-items-center px-5" 
+id="nav-bar" style="z-index: 9999;">
   <img src="../assets/DJ.png"
-  style="aspect-ratio: 1/1; width: 4rem; border-radius: 10px; z-index: 9999;">
+  style="aspect-ratio: 1/1; width: 4rem; border-radius: 10px;">
   <span class="flex-1"></span>
-  <div class="flex flex-row gap-5 text-sm h-full justify-content-center align-items-center"
+  <div class="flex flex-row gap-5 text-sm h-full justify-content-center align-items-center pr-4"
   style="letter-spacing: 0.15rem;">
-    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(1)">Home</a></div>
-    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(2)">About Me</a></div>
-    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(3)">Skills</a></div>
-    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(4)">Projects</a></div>
-    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(5)">Contact Me</a></div>
+    <div><a class="nav-links no-underline cursor-pointer hover:shadow-8" (click)="goToSpecificSection(1)">Home</a></div>
+    <div><a class="nav-links no-underline cursor-pointer hover:shadow-8" (click)="goToSpecificSection(2)">About Me</a></div>
+    <div><a class="nav-links no-underline cursor-pointer hover:shadow-8" (click)="goToSpecificSection(3)">Skills</a></div>
+    <div><a class="nav-links no-underline cursor-pointer hover:shadow-8" (click)="goToSpecificSection(4)">Projects</a></div>
+    <div><a class="nav-links no-underline cursor-pointer hover:shadow-8" (click)="goToSpecificSection(5)">Contact Me</a></div>
   </div>
 </nav>
-<div class="sections-container w-screen" style="overflow-x: hidden;">
+<div class="w-screen flex flex-row justify-content-between fixed top-0"
+style="background-color: transparent;">
+  <p-button icon="pi pi-angle-double-up" styleClass="p-button-rounded p-button-warning p-button-outlined"
+  class="m-5 home-button" (onClick)="backToTop()" id="home-button"></p-button>
+  <p-button icon="pi pi-bars" styleClass="p-button-rounded p-button-warning p-button-outlined"
+  class="m-5 mr-6 home-button" (click)="sidebarVisible = true" id="menu-button"></p-button>
+</div>
+<p-sidebar [(visible)]="sidebarVisible" styleClass="w-25rem" position="right">
+  <div class="flex flex-column w-full h-full justify-content-between">
+    <div class="flex flex-column w-full">
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 text-orange-500 cursor-pointer hover:text-blue-900" (click)="goToSpecificSection(1)">Home</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 text-orange-500 cursor-pointer hover:text-blue-900" (click)="goToSpecificSection(2)">About Me</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 text-orange-500 cursor-pointer hover:text-blue-900" (click)="goToSpecificSection(3)">Skills</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 text-orange-500 cursor-pointer hover:text-blue-900" (click)="goToSpecificSection(4)">Projects</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 text-orange-500 cursor-pointer hover:text-blue-900" (click)="goToSpecificSection(5)">Contact Me</a>
+    </div>
+    <div class="flex flex-row w-full justify-content-around pt-5" style="border-top: 3px solid orange;">
+      <img class="cursor-pointer" src="../assets/contact-icons/linkedin.svg" style="aspect-ratio: 1/1; width: 2rem;" (click)="goToSite('https://www.linkedin.com/in/dylan-jabla-630835180/')">
+      <img class="cursor-pointer" src="../assets/contact-icons/facebook.svg" style="aspect-ratio: 1/1; width: 2rem;" (click)="goToSite('https://www.facebook.com/dylan.jabla/')">
+      <img class="cursor-pointer" src="../assets/contact-icons/github.svg" style="aspect-ratio: 1/1; width: 2rem;" (click)="goToSite('https://github.com/djabla')">
+    </div>
+  </div>
+</p-sidebar>
+<div class="sections-container w-screen" (scroll)="onScroll($event)" id="sections-container">
   <section id="home" class="w-screen h-screen bg-blue-900 flex flex-row">
     <div class="home-text flex flex-column text-white justify-content-center"
     style="width: 50%; padding-top: 4rem; padding-left: 3rem;">
@@ -21,7 +44,8 @@ class="w-screen h-5rem flex flex-row bg-black-alpha-10 fixed top-0 gap-2 justify
       <p>I am a fresh grad, aspiring to be a software developer. 
         My expertise is front-end development, primarily using Angular. 
       </p>
-      <p-button class="w-max shadow-5 hover:shadow-8 mt-4" label="Contact Me" styleClass="p-button-warning"></p-button>
+      <p-button class="w-max shadow-5 hover:shadow-8 mt-4" label="Contact Me" styleClass="p-button-warning"
+      (click)="goToSpecificSection(5)"></p-button>
     </div>
     <div class="home-img flex justify-content-center align-items-center"
     style="width: 50%; padding-top: 4rem;">
@@ -71,7 +95,7 @@ class="w-screen h-5rem flex flex-row bg-black-alpha-10 fixed top-0 gap-2 justify
       </div>
     </div>
   </section>
-  <section id="skills" class="w-screen h-screen bg-indigo-900">
+  <section id="skills" class="w-screen h-screen bg-blue-900">
     <div class="skills-text flex flex-column justify-content-center align-items-center pt-8"
     style="height: 20%;">
       <h1 class="text-7xl font-bold text-white m-1"

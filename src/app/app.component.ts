@@ -14,6 +14,9 @@ export class AppComponent implements OnInit {
   currentSection: number = 1;
   currentPosition: any;
   startPosition: number = 0;
+  isAtTop = true;
+  previousTop = true;
+  sidebarVisible: boolean = false;
 
   public skills: Skill[] = [];
   public goCreateImages: any [] = [];
@@ -23,7 +26,7 @@ export class AppComponent implements OnInit {
     { breakpoint: '1024px', numVisible: 5 },
     { breakpoint: '768px', numVisible: 3 },
     { breakpoint: '560px', numVisible: 1 }
-];
+  ];
 
   public constructor(
     private router: Router,
@@ -34,8 +37,43 @@ export class AppComponent implements OnInit {
   
   ngOnInit(): void {
     this.router.navigate(["/"]);
+    this.backToTop();
     this.getSkills();
     this.getImages();
+  }
+
+  onScroll(e: any) {
+    const scrollTop = e.target.scrollTop;
+    const isTop = scrollTop <= 350;
+    this.isAtTop = isTop;
+    if (this.isAtTop != this.previousTop) {
+      this.previousTop = this.isAtTop;
+      console.log(this.isAtTop);
+      this.toggleNav(this.isAtTop);
+    }
+  }
+
+  toggleNav(bool: boolean){
+    const navBar = document.getElementById('nav-bar');
+    const homeButton = document.getElementById('home-button');
+    const menuButton = document.getElementById('menu-button');
+    if(bool){
+      navBar!.classList.add('nav-show');
+      navBar!.classList.remove('nav-hide');
+      homeButton!.classList.add('nav-left-hide');
+      homeButton!.classList.remove('nav-left-show');
+      menuButton!.classList.add('nav-right-hide');
+      menuButton!.classList.remove('nav-right-show');
+    }else{
+      navBar!.classList.remove('nav-show');
+      navBar!.classList.add('nav-hide');
+      homeButton!.classList.add('nav-left-show');
+      homeButton!.classList.remove('nav-left-hide');
+      homeButton!.classList.remove('home-button');
+      menuButton!.classList.add('nav-right-show');
+      menuButton!.classList.remove('nav-right-hide');
+      menuButton!.classList.remove('home-button');
+    }
   }
 
   getSkills(){
@@ -58,6 +96,7 @@ export class AppComponent implements OnInit {
       case 4: anchor = 'projects'; break;
       case 5: anchor = 'contact'; break;
     }
+    this.sidebarVisible = false;
     document.getElementById(anchor)!.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -67,7 +106,11 @@ export class AppComponent implements OnInit {
 
   backToTop(){
     this.currentSection = 1;
-    this.scroller.scrollToAnchor('home');
+    document.getElementById('home')!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
   }
 
   goToSite(link: any){

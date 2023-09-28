@@ -2,6 +2,110 @@
     margin: 0;
 }
 
+.nav-show {
+    animation: fadeInFromTop 0.7s forwards;
+}
+
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move element to its original position */
+    }
+}
+
+.nav-hide {
+    animation: fadeOutToTop 0.7s forwards;
+}
+
+@keyframes fadeOutToTop {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px); /* Move element up by 50 pixels while fading out */
+    }
+}
+  
+.home-button{
+    visibility: hidden;
+}
+
+.nav-left-show {
+    animation: fadeInFromLeft 0.7s forwards;
+}
+
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move element to its original position */
+    }
+}
+
+.nav-left-hide {
+    animation: fadeOutToLeft 0.7s forwards;
+}
+
+@keyframes fadeOutToLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50px); /* Move element up by 50 pixels while fading out */
+    }
+}
+
+.nav-right-show {
+    animation: fadeInFromRight 0.7s forwards;
+}
+
+@keyframes fadeInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move element to its original position */
+    }
+}
+
+.nav-right-hide {
+    animation: fadeOutToRight 0.7s forwards;
+}
+
+@keyframes fadeOutToRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(50px); /* Move element up by 50 pixels while fading out */
+    }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.nav-links{
+    scroll-behavior: smooth;
+    color: white;
+}
+
 .sections-container{
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -15,13 +119,17 @@
     background-position: center;
 }
 
+.about-img{
+    background-image: url('../assets/splash.png');
+    background-repeat: no-repeat;
+    background-size:120%;
+    background-position: center;
+}
+
 section {
     scroll-snap-align: center;
 }
 
-.nav-links{
-    scroll-behavior: smooth;
-}
 
 .typewriter{
     width: min-content;

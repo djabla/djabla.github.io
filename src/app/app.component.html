@@ -1,0 +1,201 @@
+<nav
+class="w-screen h-5rem flex flex-row bg-black-alpha-10 fixed top-0 gap-2 justify-content-center align-items-center px-5">
+  <img src="../assets/DJ.png"
+  style="aspect-ratio: 1/1; width: 4rem; border-radius: 10px; z-index: 9999;">
+  <span class="flex-1"></span>
+  <div class="flex flex-row gap-5 text-sm h-full justify-content-center align-items-center"
+  style="letter-spacing: 0.15rem;">
+    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(1)">Home</a></div>
+    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(2)">About Me</a></div>
+    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(3)">Skills</a></div>
+    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(4)">Projects</a></div>
+    <div><a class="nav-links text-white no-underline cursor-pointer" (click)="goToSpecificSection(5)">Contact Me</a></div>
+  </div>
+</nav>
+<div class="sections-container w-screen" style="overflow-x: hidden;">
+  <section id="home" class="w-screen h-screen bg-blue-900 flex flex-row">
+    <div class="home-text flex flex-column text-white justify-content-center"
+    style="width: 50%; padding-top: 4rem; padding-left: 3rem;">
+      <h1 class="text-7xl m-0" style="letter-spacing: 0.1rem;">Hello!</h1>
+      <div class="typewriter"><h1 class="text-6xl m-0">I am Dylan Jabla ...&nbsp;</h1></div>
+      <p>I am a fresh grad, aspiring to be a software developer. 
+        My expertise is front-end development, primarily using Angular. 
+      </p>
+      <p-button class="w-max shadow-5 hover:shadow-8 mt-4" label="Contact Me" styleClass="p-button-warning"></p-button>
+    </div>
+    <div class="home-img flex justify-content-center align-items-center"
+    style="width: 50%; padding-top: 4rem;">
+      <img src="../assets/jabla_grad (2).jpg"
+      class="shadow-8"
+      style="aspect-ratio: default; width: 20rem; border-radius: 15px;">
+    </div>
+  </section>
+  <section id="about" class="w-screen h-screen bg-white flex flex-row">
+    <div class="about-img flex justify-content-center align-items-center"
+    style="width: 40%; height: 100%;">
+      <img src="../assets/about.jpg"
+      class="shadow-8"
+      style="aspect-ratio: default; width: 20rem;">
+    </div>
+    <div class="about-text flex flex-column justify-content-center"
+    style="width: 60%; gap: 1rem">
+      <div class="flex flex-row justify-content-center align-items-center" style="width: 100%; margin: 0;">
+        <div style="width: 60%;">
+          <h1 class="text-7xl font-bold">Education</h1>
+          <div class="pl-3">
+            <p class="text-2xl font-medium">Technological University of the Philippines Manila</p>
+            <p class="text-xs font-italic">('19 - '23)</p>
+            <p>Bachelor of Science in Computer Science</p>
+          </div>
+        </div>
+        <div style="width: 60%;">
+          <img src="../assets/filler-2.png" 
+          style="aspect-ratio: 1/1; width: 80%;">
+        </div>
+      </div>
+      <div class="flex flex-row justify-content-center align-items-center" style="width: 100%; margin: 0;">
+        <div style="width: 30%;">
+          <img src="../assets/hobbies.png"
+          style="aspect-ratio: 1/1; width: 80%;">
+        </div>
+        <div style="width: 62%;">
+          <h1 class="text-5xl font-bold">Hobbies and Interests</h1>
+          <ul>
+            <li>I am an massive sports fan. I watch baseball, basketball, volleyball, badminton, and more. 
+              Pretty much every major sports out there!</li>
+            <li>I used to play badminton competitively during my high school years.</li>
+            <li>I am also an avid gamer and follows most mainstream e-sports scene, especially FPS games.</li>
+            <li>I can play the piano pretty well.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="w-screen h-screen bg-indigo-900">
+    <div class="skills-text flex flex-column justify-content-center align-items-center pt-8"
+    style="height: 20%;">
+      <h1 class="text-7xl font-bold text-white m-1"
+      style="letter-spacing: 0.1rem;">Skills</h1>
+      <p class="text-base text-white m-0 mt-2">
+        This are the skills that I acquired and learned through education, internship experience, and personal projects.
+      </p>
+    </div>
+    <div class="skills-cards flex flex-row justify-content-between align-items-center"
+    style="height: 70%;">
+      <div class="m-8 gap-2 flex flex-row flex-wrap"
+      style="width: 40%; height: min-content;">
+        <!-- <p-chip *ngFor="let skill of skills" class="p-2"
+        [label]="skill.name" [image]="skill.image"></p-chip> -->
+        <div *ngFor="let skill of skills"
+        class="skill-chip flex flex-row justify-content-center align-items-center flex-grow-1"
+        style="width: fit-content; max-width: 18rem; height: min-content;">
+          <div class="skill-image-holder"><img [src]="skill.image" class="skill-image"></div>
+          <span class="text-lg">{{skill.name}}</span>
+        </div>
+      </div>
+      <div class="skill-desc text-white mr-8 flex flex-column text-right justify-content-center"
+      style="width: 50%;">
+        <h1 class="text-6xl font-bold">Front End Development</h1>
+        <p>I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, 
+          but I design. Immersed in stylesheets tweaking font sizes and contemplating 
+          layouts is where you'll find me (~_^). I'm committed to creating fluent user experiences while 
+          staying fashionable.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- PROJECTS -->
+  <section id="projects" class="w-screen h-screen bg-white flex flex-column justify-content-center align-items-center">
+    <h1 class="text-6xl font-bold m-0 mb-3">Projects</h1>
+    <div class="w-full flex flex-row justify-content-around">
+      <div class="project-card shadow-6 hover:shadow-8">
+        <div class="project-img-holder">
+          <p-galleria [value]="goCreateImages" class="project-img" [showIndicators]="false" [showThumbnails]="false"
+          [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
+            <ng-template pTemplate="item" let-item>
+              <img [src]="item" style="aspect-ratio: default; width: 100%; display: block;" />
+            </ng-template>
+          </p-galleria>
+        </div>
+        <h1 class="font-bold mb-1">GoCreate</h1>
+        <p class="text-xs text-600 font-italic m-0 mb-2">School Group Project</p>
+        <p class="mt-0 text-bold text-medium">An e-commerce website built using CodeIgniter | PHP</p>
+        <p-button class="w-max hover:shadow-8" label="Check It Out" styleClass="p-button-warning"
+        (onClick)="goToSite('https://github.com/djabla/GoCreate')"></p-button>
+      </div>
+      <div class="project-card shadow-6 hover:shadow-8">
+        <div class="project-img-holder">
+          <img src="../assets/lakbay/2d Adventure Game.png" class="project-img" alt="">
+        </div>
+        <h1 class="font-bold mb-1">LAKBAY</h1>
+        <p class="text-xs text-600 font-italic m-0 mb-2">School Group Project</p>
+        <p class="mt-0 text-bold text-medium">A 2D adventure game built using Unity | C#</p>
+        <p-button class="w-max hover:shadow-8" label="Check It Out" styleClass="p-button-warning"
+        (onClick)="goToSite('https://github.com/djabla/LAKBAY')"></p-button>
+      </div>
+      <div class="project-card shadow-6 hover:shadow-8">
+        <div class="project-img-holder">
+          <img src="../assets/gocreate/1-landing-page.png" class="project-img" alt="">
+        </div>
+        <h1 class="font-bold mb-1">Pokedex</h1>
+        <p class="text-xs text-600 font-italic m-0 mb-2">Personal Project</p>
+        <p class="mt-0 text-bold text-medium">A simple web app that utilizes Pokemon API, built using Angular | Typescript</p>
+        <p-button class="w-max hover:shadow-8" label="Check It Out" styleClass="p-button-warning"
+        (onClick)="goToSite('https://github.com/djabla/dj-PokeDex')"></p-button>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACTS -->
+  <section id="contact" class="w-screen h-screen bg-black-alpha-90">
+    <div class="contact-holder flex flex-row justify-content-around" style="height: 80%; width: 100%;">
+      <div class="h-full flex flex-column justify-content-start mt-6 p-6 pl-8" style="width: 38%;">
+        <h1 class="text-white text-7xl font-bold">Say Hello</h1>
+        <div class="flex flex-row">
+          <img src="../assets/contact-icons/email.svg" class="contact-icon">
+          <p><a class="text-white no-underline pl-4 cursor-pointer" (click)="goToSite('mailto:dylanjabla07@gmail.com')">dylanjabla07@gmail.com</a></p>
+        </div>
+        <div class="flex flex-row">
+          <img src="../assets/contact-icons/phone.svg" class="contact-icon">
+          <p><a class="text-white no-underline pl-4">+63935 297 0398</a></p>
+        </div>
+      </div>
+      <div class="h-full flex flex-column justify-content-start mt-6 p-6" style="width: 28%;">
+        <h1 class="text-white text-7xl font-bold" style="visibility: hidden;">S</h1>
+        <div class="flex flex-row">
+          <img src="../assets/contact-icons/folder.svg" class="contact-icon pr-2">
+          <p><a class="text-white no-underline cursor-pointer pl-4" (click)="goToSite('https://github.com/djabla/my-projects')">Other Works</a></p>
+        </div>
+        <div class="flex flex-row">
+          <img src="../assets/contact-icons/resume.svg" class="contact-icon pr-2">
+          <p><a class="text-white no-underline cursor-pointer pl-4" (click)="goToSite('https://drive.google.com/file/d/1kKNHJyw3gJxREEWtPW0d6AjXH_utPPQB/view?usp=sharing')">My Resume</a></p>
+        </div>
+      </div>
+      <div class="h-full flex flex-column justify-content-start mt-6 p-6 pr-8" style="width: 33%;">
+        <h1 class="text-white text-7xl font-bold text-right">Socials</h1>
+        <div class="flex flex-row-reverse">
+          <img src="../assets/contact-icons/facebook.svg" class="contact-icon">
+          <p><a class="text-white no-underline text-right cursor-pointer pr-4" (click)="goToSite('https://www.facebook.com/dylan.jabla/')">dylan.jabla</a></p>
+        </div>
+        <div class="flex flex-row-reverse">
+          <img src="../assets/contact-icons/twitter.svg" class="contact-icon">
+          <p><a class="text-white no-underline text-right cursor-pointer pr-4" (click)="goToSite('https://twitter.com/DylanJabla')">@DylanJabla</a></p>
+        </div>
+        <div class="flex flex-row-reverse">
+          <img src="../assets/contact-icons/instagram.svg" class="contact-icon">
+          <p><a class="text-white no-underline text-right cursor-pointer pr-4" (click)="goToSite('https://www.instagram.com/dylan.jabla/')">@dylan.jabla</a></p>
+        </div>
+        <div class="flex flex-row-reverse">
+          <img src="../assets/contact-icons/github.svg" class="contact-icon">
+          <p><a class="text-white no-underline text-right cursor-pointer pr-4" (click)="goToSite('https://github.com/djabla')">djabla</a></p>
+        </div>
+        <div class="flex flex-row-reverse">
+          <img src="../assets/contact-icons/linkedin.svg" class="contact-icon">
+          <p><a class="text-white no-underline text-right cursor-pointer pr-4" (click)="goToSite('https://www.linkedin.com/in/dylan-jabla-630835180/')">Dylan Jabla</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-footer ml-8" style="border-top: 1px solid orange; width: 88vw;">
+      <p class="text-white pt-3">&copy; Dylan Jabla 2023</p>
+    </div>
+  </section>
+</div>

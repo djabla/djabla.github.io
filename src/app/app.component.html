@@ -1,3 +1,4 @@
+<!-- ************************ NAV BAR ************************ -->
 <nav class="nav-show w-screen bg-black-alpha-20 h-5rem flex flex-row fixed top-0 gap-2 justify-content-center align-items-center px-5" 
 id="nav-bar" style="z-index: 9999;">
   <img src="../assets/DJ.png"
@@ -12,6 +13,8 @@ id="nav-bar" style="z-index: 9999;">
     <div><a class="nav-links no-underline cursor-pointer hover:shadow-8" (click)="goToSpecificSection(5)">Contact Me</a></div>
   </div>
 </nav>
+
+<!-- ************************ SIDE BUTTONS ************************ -->
 <div class="w-screen flex flex-row justify-content-between fixed top-0"
 style="background-color: transparent;">
   <p-button icon="pi pi-angle-double-up" styleClass="p-button-rounded p-button-warning p-button-outlined"
@@ -19,6 +22,8 @@ style="background-color: transparent;">
   <p-button icon="pi pi-bars" styleClass="p-button-rounded p-button-warning p-button-outlined"
   class="m-5 mr-6 home-button" (click)="sidebarVisible = true" id="menu-button"></p-button>
 </div>
+
+<!-- ************************ SIDE BAR ************************ -->
 <p-sidebar [(visible)]="sidebarVisible" styleClass="w-25rem" position="right">
   <div class="flex flex-column w-full h-full justify-content-between">
     <div class="flex flex-column w-full">
@@ -35,7 +40,11 @@ style="background-color: transparent;">
     </div>
   </div>
 </p-sidebar>
+
+<!-- ************************ SECTION CONTAINER ************************ -->
 <div class="sections-container w-screen" (scroll)="onScroll($event)" id="sections-container">
+
+  <!-- ************************ HOME SECTION ************************ -->
   <section id="home" class="w-screen h-screen bg-blue-900 flex flex-row">
     <div class="home-text flex flex-column text-white justify-content-center"
     style="width: 50%; padding-top: 4rem; padding-left: 3rem;">
@@ -44,17 +53,18 @@ style="background-color: transparent;">
       <p>I am a fresh grad, aspiring to be a software developer. 
         My expertise is front-end development, primarily using Angular. 
       </p>
-      <p-button class="w-max shadow-5 hover:shadow-8 mt-4" label="Contact Me" styleClass="p-button-warning"
-      (click)="goToSpecificSection(5)"></p-button>
+      <button class="project-button m-0 mt-3 cursor-pointer flex flex-row justify-content-center align-items-center" (click)="goToSpecificSection(5)">Contact Me</button>
     </div>
     <div class="home-img flex justify-content-center align-items-center"
     style="width: 50%; padding-top: 4rem;">
-      <img src="../assets/jabla_grad (2).jpg"
+      <img src="../assets/jabla_grad (2).webp"
       class="shadow-8"
       style="aspect-ratio: default; width: 20rem; border-radius: 15px;">
     </div>
   </section>
-  <section id="about" class="w-screen h-screen bg-white flex flex-row">
+
+  <!-- ************************ ABOUT SECTION ************************ -->
+  <section id="about" class="about-section w-screen h-screen bg-white flex flex-row">
     <div class="about-img flex justify-content-center align-items-center"
     style="width: 40%; height: 100%;">
       <img src="../assets/about.jpg"
@@ -95,6 +105,8 @@ style="background-color: transparent;">
       </div>
     </div>
   </section>
+
+  <!-- ************************ SKILLS SECTION ************************ -->
   <section id="skills" class="w-screen h-screen bg-blue-900">
     <div class="skills-text flex flex-column justify-content-center align-items-center pt-8"
     style="height: 20%;">
@@ -108,8 +120,6 @@ style="background-color: transparent;">
     style="height: 70%;">
       <div class="m-8 gap-2 flex flex-row flex-wrap"
       style="width: 40%; height: min-content;">
-        <!-- <p-chip *ngFor="let skill of skills" class="p-2"
-        [label]="skill.name" [image]="skill.image"></p-chip> -->
         <div *ngFor="let skill of skills"
         class="skill-chip flex flex-row justify-content-center align-items-center flex-grow-1"
         style="width: fit-content; max-width: 18rem; height: min-content;">
@@ -128,11 +138,66 @@ style="background-color: transparent;">
       </div>
     </div>
   </section>
-  <!-- PROJECTS -->
+
+  <!-- ************************ PROJECTS ************************ -->
   <section id="projects" class="w-screen h-screen bg-white flex flex-column justify-content-center align-items-center">
-    <h1 class="text-6xl font-bold m-0 mb-3">Projects</h1>
-    <div class="w-full flex flex-row justify-content-around">
-      <div class="project-card shadow-6 hover:shadow-8">
+    <h1 class="text-6xl font-bold m-5 mt-7">Projects</h1>
+    <div class="w-full flex flex-row justify-content-between px-8">
+
+      <div class="card shadow-8 cursor-auto">
+        <div class="card-content">
+          <div class="project-img-holder">
+            <p-galleria [value]="goCreateImages" class="project-img" [showIndicators]="false" [showThumbnails]="false"
+            [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
+              <ng-template pTemplate="item" let-item>
+                <img [src]="item" style="aspect-ratio: default; width: 100%; display: block;" />
+              </ng-template>
+            </p-galleria>
+          </div>
+          <div class="flex flex-column justify-content-center align-items-center">
+            <p class="m-0 card-title text-2xl">GoCreate</p>
+            <p class="m-0 text-white text-xs font-italic">School Group Project</p>
+            <p class="m-2 card-para">An e-commerce website built using CodeIgniter | PHP</p>
+            <button class="project-button cursor-pointer flex flex-row justify-content-center align-items-center" (click)="goToSite('https://github.com/djabla/GoCreate')">Check It Out</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card shadow-8 cursor-auto">
+        <div class="card-content">
+          <div class="project-img-holder">
+            <img src="../assets/lakbay/2d Adventure Game.png" class="project-img" alt="">
+          </div>
+          <div class="flex flex-column justify-content-center align-items-center">
+            <p class="m-0 card-title text-2xl">LAKBAY</p>
+            <p class="m-0 text-white text-xs font-italic">School Group Project</p>
+            <p class="m-2 card-para">A 2D adventure game built using Unity | C#</p>
+            <button class="project-button cursor-pointer flex flex-row justify-content-center align-items-center" (click)="goToSite('https://github.com/djabla/LAKBAY')">Check It Out</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow-8 cursor-auto">
+        <div class="card-content">
+          <div class="project-img-holder">
+            <p-galleria [value]="goCreateImages" class="project-img" [showIndicators]="false" [showThumbnails]="false"
+            [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
+              <ng-template pTemplate="item" let-item>
+                <img [src]="item" style="aspect-ratio: default; width: 100%; display: block;" />
+              </ng-template>
+            </p-galleria>
+          </div>
+          <div class="flex flex-column justify-content-center align-items-center">
+            <p class="m-0 card-title text-2xl">PokeDex</p>
+            <p class="m-0 text-white text-xs font-italic">Personal Project</p>
+            <p class="m-2 card-para">A simple web app that utilizes Pokemon API, built using Angular | Typescript</p>
+            <button class="project-button cursor-pointer flex flex-row justify-content-center align-items-center" (click)="goToSite('https://github.com/djabla/dj-PokeDex')">Check It Out</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="project-card shadow-6 hover:shadow-8">
         <div class="project-img-holder">
           <p-galleria [value]="goCreateImages" class="project-img" [showIndicators]="false" [showThumbnails]="false"
           [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
@@ -146,8 +211,9 @@ style="background-color: transparent;">
         <p class="mt-0 text-bold text-medium">An e-commerce website built using CodeIgniter | PHP</p>
         <p-button class="w-max hover:shadow-8" label="Check It Out" styleClass="p-button-warning"
         (onClick)="goToSite('https://github.com/djabla/GoCreate')"></p-button>
-      </div>
-      <div class="project-card shadow-6 hover:shadow-8">
+      </div> -->
+
+      <!-- <div class="project-card shadow-6 hover:shadow-8">
         <div class="project-img-holder">
           <img src="../assets/lakbay/2d Adventure Game.png" class="project-img" alt="">
         </div>
@@ -156,8 +222,9 @@ style="background-color: transparent;">
         <p class="mt-0 text-bold text-medium">A 2D adventure game built using Unity | C#</p>
         <p-button class="w-max hover:shadow-8" label="Check It Out" styleClass="p-button-warning"
         (onClick)="goToSite('https://github.com/djabla/LAKBAY')"></p-button>
-      </div>
-      <div class="project-card shadow-6 hover:shadow-8">
+      </div> -->
+
+      <!-- <div class="project-card shadow-6 hover:shadow-8">
         <div class="project-img-holder">
           <img src="../assets/gocreate/1-landing-page.png" class="project-img" alt="">
         </div>
@@ -166,10 +233,12 @@ style="background-color: transparent;">
         <p class="mt-0 text-bold text-medium">A simple web app that utilizes Pokemon API, built using Angular | Typescript</p>
         <p-button class="w-max hover:shadow-8" label="Check It Out" styleClass="p-button-warning"
         (onClick)="goToSite('https://github.com/djabla/dj-PokeDex')"></p-button>
-      </div>
+      </div> -->
+
     </div>
   </section>
-  <!-- CONTACTS -->
+  
+  <!-- CONTACTS ************************ -->
   <section id="contact" class="w-screen h-screen bg-black-alpha-90">
     <div class="contact-holder flex flex-row justify-content-around" style="height: 90%; width: 100%;">
       <div class="h-full flex flex-column justify-content-start mt-6 p-6 pl-8" style="width: 38%;">

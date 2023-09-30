@@ -19,7 +19,7 @@ export const SKILLS: Skill[] = [
     image: 'assets/skills/sass.svg'
   },
   {
-    name: 'JavaScript / Typescript',
+    name: 'JavaScript',
     image: 'assets/skills/javascript.svg'
   },
   {
@@ -39,7 +39,7 @@ export const SKILLS: Skill[] = [
     image: 'assets/skills/python.svg'
   },
   {
-    name: 'C / C++ / C#',
+    name: 'C | C++ | C#',
     image: 'assets/skills/c.svg'
   },
   {

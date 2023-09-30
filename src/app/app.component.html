@@ -108,33 +108,126 @@ style="background-color: transparent;">
 
   <!-- ************************ SKILLS SECTION ************************ -->
   <section id="skills" class="w-screen h-screen bg-blue-900">
-    <div class="skills-text flex flex-column justify-content-center align-items-center pt-8"
-    style="height: 20%;">
-      <h1 class="text-7xl font-bold text-white m-1"
-      style="letter-spacing: 0.1rem;">Skills</h1>
-      <p class="text-base text-white m-0 mt-2">
-        This are the skills that I acquired and learned through education, internship experience, and personal projects.
-      </p>
+    <div class="skills-title flex flex-row" style="height: 20%;">
+      <div class="__skills" style="width: 40%;">
+        <h1>Skills</h1>
+      </div>
+      <div class="__projects" style="width: 60%;">
+        <h1 style="padding-left: 4rem;">Projects</h1>
+      </div>
     </div>
-    <div class="skills-cards flex flex-row justify-content-between align-items-center"
-    style="height: 70%;">
-      <div class="m-8 gap-2 flex flex-row flex-wrap"
-      style="width: 40%; height: min-content;">
-        <div *ngFor="let skill of skills"
-        class="skill-chip flex flex-row justify-content-center align-items-center flex-grow-1"
-        style="width: fit-content; max-width: 18rem; height: min-content;">
-          <div class="skill-image-holder"><img [src]="skill.image" class="skill-image"></div>
-          <span class="text-lg">{{skill.name}}</span>
+    <div class="skills-section w-full flex flex-row" style="height: 80%;">
+      <div class="skills-tech">
+        <p class="skills-text">This are the skills that I acquired and learned through education, internship experience, and personal projects.</p>
+        <div class="skills-chips-holder">
+          <div class="skills-chip" *ngFor="let skill of skills">
+            <div class="skill-image-holder">
+              <img [src]="skill.image" class="skill-image">
+            </div>
+            <p class="skill-name">{{skill.name}}</p>
+          </div>
         </div>
       </div>
-      <div class="skill-desc text-white mr-8 flex flex-column text-right justify-content-center"
-      style="width: 50%;">
-        <h1 class="text-6xl font-bold">Front End Development</h1>
-        <p>I'm probably not the typical designer positioned behind an Illustrator artboard adjusting pixels, 
-          but I design. Immersed in stylesheets tweaking font sizes and contemplating 
-          layouts is where you'll find me (~_^). I'm committed to creating fluent user experiences while 
-          staying fashionable.
-        </p>
+      <div class="skills-projects">
+        <div class="projects-card shadow-7">
+          <div class="project-img-holder">
+            <p-galleria [value]="goCreateImages" class="project-img" [showIndicators]="false" [showThumbnails]="false"
+            [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
+              <ng-template pTemplate="item" let-item>
+                <img [src]="item" style="aspect-ratio: default; width: 100%; display: block;" />
+              </ng-template>
+            </p-galleria>
+          </div>
+          <div class="card__content">
+            <div class="card__title-holder">
+              <p class="card__title">GoCreate</p>
+              <button class="card__button" (click)="goToSite('https://github.com/djabla/GoCreate')">
+                <img src="../assets/contact-icons/github.svg" style="aspect-ratio: 1/1; width: 1.3rem;">
+              </button>
+            </div>
+            <p class="card__subtitle text-xs font-italic m-0">School Project | Group </p>
+            <p class="card__description mt-1 mb-1">An e-commerce website built for artists and designers.</p>
+            <div class="card__chips-holder">
+              <div class="card__chips" style="background-color: gray; color: black;">
+                <p>CODEIGNITER</p>
+              </div>
+              <div class="card__chips" style="background-color: indigo; color: white;">
+                <p>PHP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects-card shadow-7">
+          <div class="project-img-holder">
+            <img src="../assets/lakbay/2d Adventure Game.png" class="project-img" alt="">
+          </div>
+          <div class="card__content">
+            <div class="card__title-holder">
+              <p class="card__title">Lakbay</p>
+              <button class="card__button" (click)="goToSite('https://github.com/djabla/LAKBAY')">
+                <img src="../assets/contact-icons/github.svg" style="aspect-ratio: 1/1; width: 1.3rem;">
+              </button>
+            </div>
+            <p class="card__subtitle text-xs font-italic m-0">4th Year Thesis | Group </p>
+            <p class="card__description mt-1 mb-1">A 2D Adventure Game based on the Spanish Colonial Era of the Philippines.</p>
+            <div class="card__chips-holder">
+              <div class="card__chips" style="background-color: black; color: white;">
+                <p>UNITY</p>
+              </div>
+              <div class="card__chips" style="background-color: purple; color: white;">
+                <p>C#</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects-card shadow-7">
+          <div class="project-img-holder">
+            <p-galleria [value]="goCreateImages" class="project-img" [showIndicators]="false" [showThumbnails]="false"
+            [responsiveOptions]="responsiveOptions" [autoPlay]="true" [circular]="true">
+              <ng-template pTemplate="item" let-item>
+                <img [src]="item" style="aspect-ratio: default; width: 100%; display: block;" />
+              </ng-template>
+            </p-galleria>
+          </div>
+          <div class="card__content">
+            <div class="card__title-holder">
+              <p class="card__title">PokeDex</p>
+              <button class="card__button" (click)="goToSite('https://github.com/djabla/dj-PokeDex')">
+                <img src="../assets/contact-icons/github.svg" style="aspect-ratio: 1/1; width: 1.3rem;">
+              </button>
+            </div>
+            <p class="card__subtitle text-xs font-italic m-0">Personal Project</p>
+            <p class="card__description mt-1 mb-1">A simple Pokemon encyclopedia web app that utilizes the PokemonAPI.</p>
+            <div class="card__chips-holder">
+              <div class="card__chips" style="background-color: red; color: white;">
+                <p>ANGULAR</p>
+              </div>
+              <div class="card__chips" style="background-color: #007acc; color: white;">
+                <p>TYPESCRIPT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects-card shadow-7">
+          <div class="project-img-holder">
+            <h1 class="text-2xl text-white">Coming Soon</h1>
+          </div>
+          <div class="card__content">
+            <div class="card__title-holder">
+              <p class="card__title">Online Shop</p>
+              <button class="card__button" (click)="goToSite('')">
+                <img src="../assets/contact-icons/github.svg" style="aspect-ratio: 1/1; width: 1.3rem;">
+              </button>
+            </div>
+            <p class="card__subtitle text-xs font-italic m-0">Coming Soon</p>
+            <p class="card__description mt-3 mb-1">A simple but fancy e-commerce website that utilizes FakeStore API.</p>
+            <div class="card__chips-holder">
+              <div class="card__chips" style="background-color: gray; color: black;">
+                <p>COMING SOON</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

@@ -1,0 +1,57 @@
+<header class="nav-bar nav-show" id="nav-bar" style="z-index: 999;">
+  <div class="nav_logo">
+    <img src="https://res.cloudinary.com/luxuryp/images/w_1920,c_limit,f_auto,q_auto/tprhoiglqzbp9mbu8x8s/jhsereno-light"
+    class="nav_logo-img" alt="">
+  </div>
+  <div class="nav_link-list">
+    <p class="nav_link">MEET THE TEAM</p>
+    <p class="nav_link">SEARCH FOR HOMES</p>
+    <p class="nav_link">OUR COMMUNITIES</p>
+    <p class="nav_link">HOME VALUATION</p>
+    <p class="nav_link">SERVICES</p>
+    <p class="nav_link">HOMES ACROSS AMERICA</p>
+    <p class="nav_link">TESTIMONIALS</p>
+    <p class="nav_link">CONTACT US</p>
+  </div>
+  <div class="nav_menu" clickable (click)="sidebarVisible = true">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><style>svg{fill:#ffffff}</style><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+  </div>
+</header>
+
+<div class="w-screen flex flex-row justify-content-between fixed top-0"
+style="background-color: transparent;">
+  <p-button icon="pi pi-angle-double-up" styleClass="p-button-rounded p-button-warning p-button-outlined"
+  class="m-5 home-button" (onClick)="backToTop()" id="home-button"></p-button>
+  <p-button icon="pi pi-bars" styleClass="p-button-rounded p-button-warning p-button-outlined"
+  class="m-5 mr-6 home-button" (click)="sidebarVisible = true" id="menu-button"></p-button>
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" styleClass="w-25rem" position="right">
+  <div class="flex flex-column w-full h-full justify-content-between">
+    <div class="flex flex-column w-full">
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 cursor-pointer hover:text-blue-900">Home</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 cursor-pointer hover:text-blue-900">Search</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 cursor-pointer hover:text-blue-900">Communities</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 cursor-pointer hover:text-blue-900">Services</a>
+      <a class="text-4xl font-bold no-underline hover:line-through m-2 cursor-pointer hover:text-blue-900">Contact Us</a>
+    </div>
+    <div class="flex flex-row w-full justify-content-around pt-5" style="border-top: 3px solid #212121;">
+      <img class="cursor-pointer" src="../assets/contact-icons/linkedin.svg" style="aspect-ratio: 1/1; width: 2rem;">
+      <img class="cursor-pointer" src="../assets/contact-icons/facebook.svg" style="aspect-ratio: 1/1; width: 2rem;">
+      <img class="cursor-pointer" src="../assets/contact-icons/github.svg" style="aspect-ratio: 1/1; width: 2rem;">
+    </div>
+  </div>
+</p-sidebar>
+
+<div class="sections-container" (scroll)="onScroll($event)" id="sections-container">
+  <section class="hero" id="home">
+    <h1 id="hero-title" class="hero_title hero-in">{{currentTranslation}}</h1>
+  </section>
+  <app-marketing-plan></app-marketing-plan>
+  <app-capabilities></app-capabilities>
+  <app-process></app-process>
+  <app-offer></app-offer>
+  <app-market></app-market>
+  <app-contact-us></app-contact-us>
+  <app-footer></app-footer>
+</div>

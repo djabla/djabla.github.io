@@ -1,0 +1,39 @@
+<section>
+    <div class="main-container">
+        <div class="cont__text">
+            <h2 class="cont__title">The Buying Process</h2>
+        </div>
+        <div class="cont__img-holder">
+            <p-galleria [value]="images" [(activeIndex)]="activeIndex" [showIndicators]="false" [showThumbnails]="false"
+            [autoPlay]="true" [transitionInterval]="5000" [circular]="true">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item" class="cont__img shadow-8"/>
+                </ng-template>
+            </p-galleria>
+        </div>
+        <div class="cont__accordion">
+            <p-accordion [(activeIndex)]="activeIndex">
+                <p-accordionTab [disabled]="isAccordionTabDisabled(0)" header="1   |   INITIAL CONSULTATION & PLANNING">
+                    <p class="accordion__text">
+                        Embark on your home-buying journey with a personalized consultation. We listen to your preferences, goals, and financial considerations, setting the foundation for a tailored plan that aligns with your dream home.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(1)" header="2   |   SEARCH FOR A HOME & GET PRE-APPROVED">
+                    <p class="accordion__text">
+                        Navigate the market with confidence. We guide you through the home search, offering expert insights, and assist in securing pre-approval, empowering you to make informed decisions within your budget.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(2)" header="3   |   SUBMIT AN OFFER">
+                    <p class="accordion__text">
+                        Transform your dream home into a reality. We help you navigate the offer process, providing strategic guidance to ensure your offer stands out. Our goal is to secure your ideal home at the best terms possible.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(3)" header="4   |   COMPLETE SETTLEMENT PROCESS">
+                    <p class="accordion__text">
+                        Navigate the intricacies of the settlement process seamlessly. From inspections to legalities, we manage the details, ensuring a smooth transition to homeownership. Your satisfaction and peace of mind are our top priorities.
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+<section>
+    <div class="main-container">
+        <div class="cont__text">
+            <h2 class="cont__title">The Selling Process</h2>
+        </div>
+        <div class="cont__img-holder">
+            <p-galleria [value]="images" [(activeIndex)]="activeIndex" [showIndicators]="false" [showThumbnails]="false"
+            [autoPlay]="true" [transitionInterval]="5000" [circular]="true">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item" class="cont__img shadow-8"/>
+                </ng-template>
+            </p-galleria>
+        </div>
+        <div class="cont__accordion">
+            <p-accordion [(activeIndex)]="activeIndex">
+                <p-accordionTab [disabled]="isAccordionTabDisabled(0)" header="1   |   INITIAL CONSULTATION & PLANNING">
+                    <p class="accordion__text">
+                        Begin your journey with a personalized consultation, where we delve into your goals and outline a strategic plan tailored to your unique property. Together, we set the stage for a seamless selling experience.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(1)" header="2   |   DEVISE & EXECUTE MARKETING PLAN">
+                    <p class="accordion__text">
+                        Harness the power of targeted marketing as we craft a comprehensive plan to showcase your property. From online platforms to traditional channels, our dynamic strategies ensure maximum exposure, attracting the right buyers.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(2)" header="3   |   REVIEW OFFERS & REACH AGREEMENT WITH BUYER">
+                    <p class="accordion__text">
+                        Navigate the negotiation landscape with confidence. We meticulously review offers, provide expert guidance, and facilitate transparent communication, guiding you towards a mutually beneficial agreement.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(3)" header="4   |   COMPLETE TRANSACTION PROCESS">
+                    <p class="accordion__text">
+                        Streamline the transaction journey with our efficient processes. From paperwork to legalities, we manage the intricacies, ensuring a smooth and timely completion of the sale. Your peace of mind is our priority.
+                    </p>
+                </p-accordionTab>
+                <p-accordionTab [disabled]="isAccordionTabDisabled(4)" header="5   |   AFTER - SALE SERVICE">
+                    <p class="accordion__text">
+                        Our commitment extends beyond the sale. Experience ongoing support as we assist with post-transaction details, ensuring a seamless transition for you and offering a helping hand for any lingering questions or needs.
+                    </p>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+    </div>
+</section>
+<app-buying-process></app-buying-process>
+

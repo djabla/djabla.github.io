@@ -1,0 +1,110 @@
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move element to its original position */
+    }
+}
+
+@keyframes fadeOutToTop {
+    0% {
+        opacity: 1;
+        transform: translateY(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px); /* Move element up by 50 pixels while fading out */
+    }
+}
+
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move element to its original position */
+    }
+}
+
+@keyframes fadeOutToLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50px); /* Move element up by 50 pixels while fading out */
+    }
+}
+
+@keyframes fadeInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move element to its original position */
+    }
+}
+
+@keyframes fadeOutToRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0); /* Start at the original position */
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(50px); /* Move element up by 50 pixels while fading out */
+    }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.nav-links{
+    scroll-behavior: smooth;
+    color: white;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+@keyframes fadeInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px); /* Move element up by 50 pixels */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move element to its original position */
+    }
+}

@@ -1,0 +1,98 @@
+section{
+    width: 100%;
+    height: min-content;
+    background-color: white;
+    padding: 1.3rem;
+    display: grid;
+    place-items: center;
+    background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .cont__text{
+            .cont__title{
+                text-align: center;
+            }
+        }
+        .cont__img-holder{
+            width: 80%;
+            align-self: center;
+            margin-bottom: 2rem;
+            .cont__img{
+                aspect-ratio: 1/1;
+                width: 80%; 
+                border-radius: 3rem;
+                object-fit: cover;
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            .cont__img-holder{
+                width: 70%;
+                .cont__img{
+                    width: 100%;
+                    height: 22rem;
+                    object-fit: cover;
+                }
+            }
+        }
+        .cont__accordion{
+            .accordion__text{
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 992px) {
+    section{
+        padding: 2rem;
+        padding-top: 0;
+        .main-container{
+            padding: 3rem;
+            padding-top: 0;
+            display: grid;
+            grid-template-columns: 15% 20% 18% 28%;
+            grid-template-rows: auto auto auto auto;
+            gap: 1rem;
+            .cont__text{
+                padding-left: 2rem;
+                grid-row: 1 / 3;
+                grid-column: 1 / 5;
+                .cont__title{
+                    font-size: 2.5rem;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+            .cont__img-holder{
+                grid-row: 3 / 5;
+                grid-column: 1 / 3;
+                width: 100%;
+                height: 100%;
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .cont__img{
+                    width: 80%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 79px 24px 81px 23px;
+                    -webkit-border-radius: 79px 24px 81px 23px;
+                    -moz-border-radius: 79px 24px 81px 23px;
+                }
+            }
+            .cont__accordion{
+                padding-left: 2rem;
+                grid-row: 3 / 5;
+                grid-column: 3 / 5;
+                scale: 0.95;
+                .accordion__text{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
